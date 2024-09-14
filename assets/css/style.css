@@ -933,6 +933,7 @@ button {
 }
 
 .subscription__policy {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -946,6 +947,55 @@ button {
 .subscription__policy input {
     width: 24px;
     height: 24px;
+}
+
+.subscription__policy-check {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    border: 2px solid #405d65;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+.subscription__policy-check:hover {
+    cursor: pointer;
+    border-color: #EFCFAD;
+}
+
+.subscription__policy > input[type=checkbox] {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1px;
+    height: 1px;
+    appearance: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.subscription__policy > input[type=checkbox]:checked + .subscription__policy-check {
+    border-color: #BEAB96;
+}
+
+.subscription__policy-check::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 19px;
+    background-image: url(../images/icons/checkbox-check.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
+
+.subscription__policy > input[type=checkbox]:checked + .subscription__policy-check::before {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .subscription__btn {
