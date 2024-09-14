@@ -966,12 +966,14 @@ button {
 }
 
 .subscription__image img.subscription__image-static {
-    height: inherit;
+    width: auto;
+    height: auto;
     position: absolute;
     left: -60px;
     bottom: 0;
     max-height: 800px;
     object-position: bottom;
+    object-fit: contain;
 }
 
 .subscription__image img.subscription__image-bg {
